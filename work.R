@@ -12,4 +12,9 @@ heatmap(as.matrix(Ah.ok[,c(4:11,1:3)]), margins = c(4,15), Colv=NA, Rowv=NA, col
 heatmap(as.matrix(Ah.ok[,c(4:11,1:3)]), margins = c(4,15), Colv=NA, Rowv=NA, scale="none")
 
 # Different Locations
-DL <- read.csv2("DifLoc.csv")
+DL <- read.csv2("DifLoc.csv", stringsAsFactors = FALSE)
+DL.ok <- DL[-(1:4),-c(1:2, ncol(DL))]
+DL.ok <- as.numeric(as.matrix(DL.ok))
+DL.ok <- matrix(DL.ok,nrow=31,ncol=94)
+DL.spec <- DL[-(1:4),2]
+rownames(DL.ok) <- DL.spec
