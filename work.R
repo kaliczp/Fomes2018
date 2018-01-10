@@ -6,3 +6,4 @@ Ah.ok <- Ah[-c(11,12),-c(1,13,14)]
 colnames(Ah.ok) <- month.abb[c(10:12,1:8)]
 rownames(Ah.ok) <- Ah.spec[1:10]
 heatmap(as.matrix(Ah.ok))
+heatmap(as.matrix(Ah.ok), margins = c(4,15), Colv=NA, Rowv=NA)
