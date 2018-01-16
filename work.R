@@ -15,6 +15,10 @@ heatmap(as.matrix(Ah.ok[,c(4:11,1:3)]), margins = c(4,15), Colv=NA, Rowv=NA, sca
 DL <- read.csv2("DifLoc.csv", stringsAsFactors = FALSE)
 DL.ok <- DL[-(1:4),-c(1:2, ncol(DL))]
 DL.ok <- as.numeric(as.matrix(DL.ok))
+which(is.na(DL.ok))
+DL.ok[1040]=1
+# Same as above 2 line
+# DL.ok[is.na(DL.ok)]=1
 DL.ok <- matrix(DL.ok,nrow=31,ncol=94)
 DL.spec <- DL[-(1:4),2]
 rownames(DL.ok) <- DL.spec
